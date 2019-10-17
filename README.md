@@ -4,7 +4,7 @@
 
 __Who are we?__
 
-![group picture]()
+![group picture](https://github.com/Jmzahn/P1.18/blob/master/sketches/MVIMG_20191017_181004.jpg?raw=true)
 
 Arturo Mora
 
