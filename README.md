@@ -37,6 +37,14 @@ __New Conditions__
 (\*)  Any interaction with a button changes the opacity of the button to provide feedback.
 
 ## Features
+Application tab
+Fitness app
+Browser
+News
+Social media
+mirror light
+settings
+Time and weather
 
 ## Where are we now?
 
