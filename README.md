@@ -37,22 +37,38 @@ __New Conditions__
 (\*)  Any interaction with a button changes the opacity of the button to provide feedback.
 
 ## Features
-Application tab
+Application Tab
 
-Fitness app
+Fitness App
 
 Browser
 
 News
 
-Social media
+Social Media
 
-mirror light
+Mirror Light
 
-settings
+Settings
 
-Time and weather
+Time and Weather
 
 ## Where are we now?
 
+Planning the implimentation
+
+Dividing out the modules
+
 ## Plans moving forward
+
+Work as a team to create the main program
+
+Splitting up to create the seperate modules
+
+Implimenting the modules together
+
+Testing out the modules one by one for errors
+
+Testing out entire program for errors
+
+
