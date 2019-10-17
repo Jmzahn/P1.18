@@ -38,12 +38,19 @@ __New Conditions__
 
 ## Features
 Application tab
+
 Fitness app
+
 Browser
+
 News
+
 Social media
+
 mirror light
+
 settings
+
 Time and weather
 
 ## Where are we now?
