@@ -57,7 +57,7 @@ Time and Weather
 
 ## Where are we now?
 
-Planning the implimentation
+Planning the implementation
 
 Dividing out the modules
 
@@ -65,9 +65,9 @@ Dividing out the modules
 
 Work as a team to create the main program
 
-Splitting up to create the seperate modules
+Splitting up to create the separate modules
 
-Implimenting the modules together
+Implementing the modules together
 
 Testing out the modules one by one for errors
 
