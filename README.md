@@ -4,6 +4,8 @@
 
 __Who are we?__
 
+![group picture]()
+
 Arturo Mora
 
 Chigozie Andrew nwalie
