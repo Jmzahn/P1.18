@@ -1,0 +1,10 @@
+#spotify {
+  position: absolute;
+  z-index: 9;
+}
+
+#spotifyheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+}
