@@ -1,9 +1,110 @@
 let capture;
+let canvas;
+let weather;
+let time;
+let appTab;
+let fitnessBtn;
+let browserBtn;
+let newsBtn;
+let socialBtn;
+let mirrorLightBtn;
+let musicBtn;
+let settingsBtn;
+let hideBtn;
+let appTabLoc;
+let hidden;
 
 function setup() {
-  createCanvas(390, 240);
+  canvas = createCanvas(390, 240);
   capture = createCapture(VIDEO);
   capture.hide();
+
+  weather = createButton("");
+  weather.mousePressed(openWeather);
+
+  time = createButton("");
+  time.mousePressed(openCalendar)
+
+  appTab = createButton("");
+  appTabLoc = -5;
+  appTab.mousePressed(openAppTab);
+
+  fitnessBtn = createButton("Fitness");
+  fitnessBtn.mousePressed(openFitness);
+
+  browserBtn = createButton("Browser");
+  browserBtn.mousePressed(openBrowser);
+
+  newsBtn = createButton("News");
+  newsBtn.mousePressed(openNews);
+
+  socialBtn = createButton("Social");
+  socialBtn.mousePressed(openSocial);
+
+  mirrorLightBtn = createButton("Light");
+  mirrorLightBtn.mousePressed(openLight);
+
+  musicBtn = createButton("Music");
+  musicBtn.mousePressed(openMusic);
+
+  settingsBtn = createButton("Settings");
+  settingsBtn.mousePressed(openSettings);
+
+  hideBtn = createButton("Hide");
+  hideBtn.mousePressed(hide);
+  hidden = False;
+}
+
+function openAppTab(){
+  if(appTabLoc == -5){
+    appTabLoc = 2;
+  }
+  else{
+    appTabLoc = -5;
+  }
+}
+
+function openFitness(){
+
+}
+
+function openBrowser(){
+
+}
+
+function openNews(){
+
+}
+
+function openSocial(){
+
+}
+
+function openLight(){
+
+}
+
+function openMusic(){
+
+}
+
+function openSettings(){
+
+}
+
+function openWeather(){
+
+}
+
+function openCalendar(){
+  
+}
+
+function hide(){
+  if(hidden)
+    hidden = False;
+  else
+    hidden = True;
 }
 
 function draw() {
