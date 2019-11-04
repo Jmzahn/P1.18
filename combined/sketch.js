@@ -1,27 +1,47 @@
 let capture;
-let canvas;
-let weatherBtn;
-let timeBtn;
+
+//button variables
 let appTab;
-let fitnessBtn, browserBtn, newsBtn, twitterBtn, mirrorLightBtn, musicBtn, settingsBtn, hideBtn;
 let appTabLoc;
+let weatherBtn, timeBtn, fitnessBtn, browserBtn, newsBtn, twitterBtn, mirrorLightBtn, musicBtn, settingsBtn, hideBtn;
 let hidden;
 
+//Time variables
+let abstand_links = 10;
+let sek, min, stunde;
+
+// weather variables
 let temperature = 0;
 let weather = "";
-let json;
+let getData;
 
+//App variables
 let twitter, spotify, calendar;
 
 function preload(){
-  let url = "https://api.openweathermap.org/data/2.5/weather?q=Lubbock&units=imperial&APPID=e812164ca05ed9e0344b89ebe273c141";
-  json = loadJSON(url);
+  // Weather
+  let url = "https://api.openweathermap.org/data/2.5/weather?q=Lubbock&units=metric&APPID=e812164ca05ed9e0344b89ebe273c141";
+  getData = loadJSON(url);
+  p01d = loadImage("assets/01d.png");
+  p02d = loadImage("assets/02d.png");
+  p03d = loadImage("assets/03d.png");
+  p04d = loadImage("assets/04d.png");
+  p09d = loadImage("assets/09d.png");
+  p10d = loadImage("assets/10d.png");
+  p11d = loadImage("assets/11d.png");
+  p13d = loadImage("assets/13d.png");
+  p50d = loadImage("assets/50d.png");
 }
 
 function setup() {
-  canvas = createCanvas(600, 800);
-  capture = createCapture(VIDEO);
+  createCanvas(windowWidth, windowHeight);
+  frameRate(30);
+  textFont('Arial');
+  capture=createCapture(VIDEO);
+  capture.size(400,400);
   capture.hide();
+  
+  //load and hide apps
   calendar = select("#calendar")
   calendar.hide();
   spotify = select("#spotify")
@@ -29,10 +49,6 @@ function setup() {
   twitter = select(".twitter-timeline")
   twitter.hide();
   
-  // Get the temperature
-  temperature = json.main.temp;
-
-  weather = json.weather[0].description;
   
   weatherBtn = createButton("");
   weatherBtn.mousePressed(openWeather);
@@ -53,7 +69,7 @@ function setup() {
   newsBtn = createButton("News");
   newsBtn.mousePressed(openNews);
 
-  twitterBtn = createButton("Social");
+  twitterBtn = createButton("Twitter");
   twitterBtn.mousePressed(openTwitter);
 
   mirrorLightBtn = createButton("Light");
@@ -72,7 +88,7 @@ function setup() {
 
 function openAppTab(){
   if(appTabLoc == -100){
-    appTabLoc = 2;
+    appTabLoc = 10;
   }
   else{
     appTabLoc = -100;
@@ -135,10 +151,10 @@ function hide(){
 }
 
 function draw() {
-  background(255);
-  translate(capture.width, 0);
+  image(capture,200,90,640,480);
+  translate(width, 0);
   scale(-1, 1);
-  image(capture, 0, 0, 600, 800);
+  
 
   appTab.position(0,90);
   
@@ -150,11 +166,50 @@ function draw() {
   musicBtn.position(appTabLoc, 200);
   settingsBtn.position(appTabLoc, 220);
 
-  weatherBtn.position(0,780);
-  weatherBtn.html(temperature+" F")
-  
-  timeBtn.position(65,780);
-  timeBtn.html(hour()+":"+minute());
+  hideBtn.position(width-10,height-10);
 
-  hideBtn.position(550,780);
+  fill(255);  
+  textAlign(LEFT); 
+  textStyle(BOLD); 
+  textSize(40); 
+  let monat = ['none', 'Janurary', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  let mName = month();
+  text( monat[mName] + ' ' + day() + ', ' + year(), abstand_links,50);
+  textSize(110); 
+  if(second() < 10){ 
+    sek = '0';
+    } else {
+    sek = '';
+  }
+  if(minute() <10) {
+    min = ':0';
+  } else {
+    min = ':'; 
+  }
+  if (hour() <10) {
+    stunde = '0';
+  } else {
+    stunde = '';
+  }
+    text(stunde + hour() + min + minute(), abstand_links, 150);
+    textSize(60);
+    text(sek + second(),300, 115)
+
+
+  // Weather
+    temperature = getData.main.temp;
+    weather = getData.weather[0].description;
+    icon = getData.weather[0].icon;
+   
+  // textAlign(right);
+  textSize(80);
+    temperature=(temperature*(9/5))+32;
+    temperature=temperature.toFixed(2);
+  text(temperature + "°F", width - 290, 120);
+  textSize(30);
+  text(weather, width - 255, 150);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
