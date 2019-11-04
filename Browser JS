@@ -1,0 +1,15 @@
+var button;
+function setup() { 
+  noCanvas();
+  background(220);
+  button = createButton('Browser');
+  button.position(10,10);
+  button.mousePressed(openLink);  
+} 
+
+
+function openLink(){
+  window.open("https://www.google.com/");
+  
+}
+
