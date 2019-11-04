@@ -1,6 +1,7 @@
 P1.18
 Introduction
 Who are we?
+![image](https://user-images.githubusercontent.com/54778863/68159793-16e64b00-ff18-11e9-93a5-27935de5c442.png)
 
 
 Arturo Mora
