@@ -1,0 +1,46 @@
+// url pattern https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=<yourKeyHere>
+var url = "https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=Mz5EYmmoVke1VRLkQGgdNbSRUfvZjwa5";
+
+
+
+function setup() {
+  noCanvas(); // not recreat canvas
+  loadJSON(url, gotData); // fetch data from url and call gotData function when finish
+}
+
+function gotData(data) {
+  console.log(data)
+  var articles = data.results; // data json result
+  
+  // go to each item to get data
+  for (var i = 0; i < articles.length; i++) { 
+    let div = createElement('li');
+    div.parent('newscontain')
+    div.id('articleHolder'+i);
+    div.class('collection-item avatar');
+    
+    let image = createElement('img');
+    image.class("circle")
+    image.attribute('src',articles[i].thumbnail_standard)
+    image.parent(div);
+    
+    let title = createElement('span', articles[i].title);
+    title.class('title')
+    title.parent(div);
+    
+    let time = createElement('p',articles[i].updated_date);
+    time.class('timedisplay')
+    time.parent(div);
+  
+  
+    let abstract = createP(articles[i].abstract);
+    abstract.parent('articleHolder'+i);
+    
+    let link = createElement('a', 'View');
+    link.attribute('href',articles[i].url)
+    link.parent(div);
+
+  
+  }
+
+}
