@@ -1,43 +1,67 @@
-## Smart Mirror using p5.js
+P1.18
+Introduction
+Who are we?
 
 
-## google cal
+Arturo Mora
 
-https://github.com/toniov/gcal-cli
+Chigozie Andrew nwalie
 
-```
-gcal list -f $(date +%Y-%m-%d) -t $(date +%Y-%m-%d -d "14 day")|sed 1d|sed 's/-/./g'
-```
+Enrique Cervantes
 
-## [p5.js](https://github.com/processing/p5.js)
+Jacob Zahn
 
+Sketches
 
-Apache config
+Current condition
 
-```
-<VirtualHost *:80>
-	ServerName example.org
-	ServerAdmin webmaster@example.org
-	DocumentRoot /var/www/html/
- 
-              Alias "/index.html" "/var/www/html/index.html"
-              Alias "/index" "/var/www/html/index.html"
-        ScriptAlias "/scpript" "/usr/lib/cgi-bin/script.cgi"
-        ScriptAlias "/api/cal" "/usr/lib/cgi-bin/cal.cgi"
-        
+Weather/Date/Time displayed in bottom left corner. All other apps are closed/collapsed.
 
-        RedirectMatch 404 .*\.htsh
-        <Directory /var/www/html/>
-            AllowOverride none
-            Options -Indexes
-            Require all granted
-        </Directory>
-	ErrorLog /var/log/apache2/error.log
-	CustomLog /var/log/apache2/access.log combined
-	Include conf-available/serve-cgi-bin.conf
-</VirtualHost>
-```
+second sketch
 
-# google calendar 
-su www-data -s /bin/bash
-gcalcli --noauth_local_webserver list
+Actions
+
+(1) Opening left shelf and pressing on the news app.
+
+(2) User presses on the Weather/Date/Time.
+
+New Conditions
+
+(1) News app opens from the right side of the mirror.
+
+(2) Calendar opens from the bottom left corner.
+
+(*) Any interaction with a button changes the opacity of the button to provide feedback.
+
+Features
+Application Tab
+
+Fitness App
+
+Browser
+
+News
+
+Social Media
+
+Mirror Light
+
+Settings
+
+Time and Weather
+
+Where are we now?
+Planning the implementation
+
+Dividing out the modules
+
+Plans moving forward
+Work as a team to create the main program
+
+Splitting up to create the separate modules
+
+Implementing the modules together
+
+Testing out the modules one by one for errors
+
+Testing out entire program for errors
