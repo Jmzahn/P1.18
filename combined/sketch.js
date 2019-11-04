@@ -98,7 +98,10 @@ function openLight(){
 }
 
 function openMusic(){
-
+  if(spotify.elt.style.display==='none')
+    spotify.show();
+  else
+    spotify.hide();
 }
 
 function openSettings(){
@@ -110,14 +113,20 @@ function openWeather(){
 }
 
 function openCalendar(){
-  
+  if(calendar.elt.style.display==='none')
+    calendar.show();
+  else
+    calendar.hide();
 }
 
 function hide(){
   if(hidden)
     hidden = 0;
   else
+    spotify.hide();
+    calendar.hide();
     hidden = 1;
+    appTabLoc = -100
 }
 
 function draw() {
