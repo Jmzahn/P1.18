@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html {
+  background-color: black;
+}
+h1 {
+  color: white;
+  font-size: 60px;
+}
+</style>
+<meta http-equiv="refresh" content="10">
+</head>
+ <body>
+ <ul>
+ <?bash
+   echo "<h1>$(date)</h1>"
+ ?>
+</ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?bash
+if [[ $json == "true" ]];then
+echo "["
+IFS=$'\n'                                                                                                                                                                                                          
+count=1
+for value in $(gcalcli --nocolor --nolineart agenda '8am' "$(date -d "+10 days" +%d/%m/%y)"|sed 1d|sed '$ d' \
+|awk '{a=length($1);b=length($3);if (a =="2" && b == "2")print $1" "$2" "$3"\n"$4" "$5" "$6" "$7" "$8;else print $1" "$2" "$3" "$4" "$5" "$6" "$7" "$8}');do
+
+if [[  $count -eq 1 ]];then
+  echo "{"
+  echo "  \"date:\": \"${value}\""
+  count=2
+  continue
+fi
+
+if [[ $value = *[a-z]* ]];then
+  echo "  \"item\": \"${value/$ / }\""
+  else
+  count=1
+  echo "}"
+fi
+
+done
+echo "}"
+echo "]"
+else
+gcalcli --nocolor --nolineart agenda '8am' "$(date -d "+10 days" +%d/%m/%y)"|sed 1d|sed '$ d' \
+|awk '{a=length($1);b=length($3);if (a =="2" && b == "2")print $1" "$2" "$3"\n"$4" "$5" "$6" "$7" "$8;else print $1" "$2" "$3" "$4" "$5" "$6" "$7" "$8}'
+fi
+?>
