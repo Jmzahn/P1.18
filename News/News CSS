@@ -1,0 +1,14 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+.article {
+  margin-bottom: 50px;
+}
+.timedisplay{
+  font-size: 12px;
+}
