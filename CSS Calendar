@@ -1,6 +1,6 @@
 #calendar {
   position: absolute;
-  z-index: 9; 
+  z-index: 9;
 }
 
 #mydivheader {
@@ -10,7 +10,6 @@
   background-color: #2196F3;
   color: #fff;
 }
-
 *, *:before, *:after {
 -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
