@@ -1,43 +1,75 @@
-## Smart Mirror using p5.js
+# P1.18
 
+## Introduction
 
-## google cal
+__Who are we?__
 
-https://github.com/toniov/gcal-cli
+![group picture](https://github.com/Jmzahn/P1.18/blob/master/sketches/MVIMG_20191017_181004.jpg?raw=true)
 
-```
-gcal list -f $(date +%Y-%m-%d) -t $(date +%Y-%m-%d -d "14 day")|sed 1d|sed 's/-/./g'
-```
+Arturo Mora
 
-## [p5.js](https://github.com/processing/p5.js)
+Chigozie Andrew nwalie
 
+Enrique Cervantes
 
-Apache config
+Jacob Zahn
 
-```
-<VirtualHost *:80>
-	ServerName example.org
-	ServerAdmin webmaster@example.org
-	DocumentRoot /var/www/html/
- 
-              Alias "/index.html" "/var/www/html/index.html"
-              Alias "/index" "/var/www/html/index.html"
-        ScriptAlias "/scpript" "/usr/lib/cgi-bin/script.cgi"
-        ScriptAlias "/api/cal" "/usr/lib/cgi-bin/cal.cgi"
-        
+## Sketches
 
-        RedirectMatch 404 .*\.htsh
-        <Directory /var/www/html/>
-            AllowOverride none
-            Options -Indexes
-            Require all granted
-        </Directory>
-	ErrorLog /var/log/apache2/error.log
-	CustomLog /var/log/apache2/access.log combined
-	Include conf-available/serve-cgi-bin.conf
-</VirtualHost>
-```
+![first sketch](https://github.com/Jmzahn/P1.18/blob/master/sketches/IMG4132770534045897577.jpg?raw=true)
 
-# google calendar 
-su www-data -s /bin/bash
-gcalcli --noauth_local_webserver list
+__Current condition__
+
+Weather/Date/Time displayed in bottom left corner. All other apps are closed/collapsed.
+
+![second sketch](https://github.com/Jmzahn/P1.18/blob/master/sketches/IMG246699200809384616.jpg?raw=true)
+
+__Actions__
+
+(1)   Opening left shelf and pressing on the news app.
+
+(2)   User presses on the Weather/Date/Time.
+
+__New Conditions__
+
+(1)   News app opens from the right side of the mirror.
+
+(2)   Calendar opens from the bottom left corner.
+
+(\*)  Any interaction with a button changes the opacity of the button to provide feedback.
+
+## Features
+Application Tab
+
+Fitness App
+
+Browser
+
+News
+
+Social Media
+
+Mirror Light
+
+Settings
+
+Time and Weather
+
+## Where are we now?
+
+Planning the implementation
+
+Dividing out the modules
+
+## Plans moving forward
+
+Work as a team to create the main program
+
+Splitting up to create the separate modules
+
+Implementing the modules together
+
+Testing out the modules one by one for errors
+
+Testing out entire program for errors
+
