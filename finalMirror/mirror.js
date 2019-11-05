@@ -48,7 +48,7 @@ function draw() {
   textSize(40); 
   let monat = ['none', 'Janurary', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   let mName = month();
-  text( monat[mName] + ' ' + day() + ' ' + year(), width-350,height-80);
+  text(monat[mName] + ' ' +day() + ' ' + year(), width-350,height-80);
   textSize(60); 
 
   if(second() < 10){ 
@@ -75,10 +75,10 @@ function draw() {
   } else {
     stunde = '';
   }
-    text(stunde + timehr + min + minute() , width-280, height-20);
+    text(stunde + timehr + min + minute() , width-270, height-20);
     textSize(30);
     text(sek + second(),width-120, height-50);
-    textSize(50);
+    textSize(50)
     text(timept, width-80, height-20);
 
 
